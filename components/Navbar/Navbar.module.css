@@ -1,0 +1,45 @@
+.navbar {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+    grid-column: 1/2;
+    background: #9EBEF9;
+    background: -webkit-linear-gradient(left, #9EBEF9, #035077);
+    background: -moz-linear-gradient(left, #9EBEF9, #035077);
+    background: linear-gradient(to right, #9EBEF9, #035077);
+    font-family: "Times New Roman", serif;
+}
+
+
+.nav :hover {
+    transform: scale(1.15);
+    color: aquamarine;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+
+.item a {
+    text-decoration: none;
+    font-size: 18px;
+    color: cyan;
+
+}
+
+.item a.activeLink {
+    color: coral;
+    font-size: 22px;
+}
+
+.friends {
+    margin-top: 50px;
+}
+
+.friends a {
+    text-decoration: none;
+    font-size: 24px;
+    color: aqua;
+    font-family: cursive;
+}

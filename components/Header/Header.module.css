@@ -1,0 +1,22 @@
+
+
+.header {
+    color: aquamarine;
+    font-size: 40px;
+    grid-column: 1/5;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 15%, rgba(94,95,106,1) 48%, rgba(0,212,255,1) 86%);
+}
+
+.header img {
+    height: 60px;
+    width: 60px;
+}
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    color: #214AF9;
+}

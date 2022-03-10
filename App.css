@@ -1,0 +1,26 @@
+.app-wrapper {
+    display: grid;
+    margin: auto;
+
+    grid-template-rows: 60px 1fr 1fr;
+    grid-template-columns: 3fr 10fr;
+}
+
+
+.app-wrapper-content {
+    background: #214AF9;
+    background: -webkit-linear-gradient(top left, #214AF9, #FBAC69);
+    background: -moz-linear-gradient(top left, #214AF9, #FBAC69);
+    background: linear-gradient(to bottom right, #214AF9, #FBAC69);
+    grid-column: 2/5;
+
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+
+.friends_item {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.friends_item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+
+.friends {
+    font-family: cursive;
+    font-size: 30px;
+    text-align: center;
+    background: #FBAC69;
+}
+
+.friends_item :hover {
+    transform: scale(1.15);
+    font-size: 15px;
+}
+
+
+

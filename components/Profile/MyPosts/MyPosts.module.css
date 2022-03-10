@@ -1,0 +1,14 @@
+
+.content {
+    background-color: bisque;
+    grid-column: 2/5;
+
+}
+
+.postsblock {
+    padding: 10px;
+}
+
+.posts {
+    margin-top: 10px;
+}

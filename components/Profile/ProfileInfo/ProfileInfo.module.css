@@ -1,0 +1,22 @@
+.descr {
+    padding: 10px;
+    background-color: antiquewhite;
+    height: auto;
+    width: 250px;
+    border-radius: 15px;
+}
+
+.mainPhoto {
+    width: 100%;
+    height: 250px;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.textInfo {
+    font-weight: bold;
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 10px;
+}
