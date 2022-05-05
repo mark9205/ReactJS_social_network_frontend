@@ -37,7 +37,7 @@ class App extends Component {
 						<Route path="/news" render={() => <MyNewsContainer />} />
 						<Route path="/music" render={() => <Music />} />
 						<Route path="/settings" render={() => <Settings />} />
-						<Route path="/users" render={() => <UsersContainer />} />
+						<Route path="/users" render={() => <UsersContainer pageTitle={"Самураи"}/>} />
 						<Route path="/login" render={() => <LoginPage />} />
 						<Route exact path="/" render={() => <Redirect to={'/profile'} />}/>
 					</Switch>

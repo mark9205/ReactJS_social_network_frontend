@@ -19,21 +19,45 @@ import {
 	getTotalUsersCount,
 	getUsersSuperSelector,
 } from "../../redux/users-selectors";
+import { UserType } from "../../types/types";
+import { AppStateType } from "../../redux/redux-store";
 
-class UsersContainer extends Component {
+type MapStatePropsType = {
+	currentPage: number;
+	pageSize: number;
+	isFetching: boolean;
+	totalCount: number;
+	users: Array<UserType>;
+	followingInProgress: Array<number>;
+};
+
+type MapDispatchPropsType = {
+	follow: (userID: number) => void;
+	unfollow: (userID: number) => void;
+	getUsers: (currentPage: number, pageSize: number) => void;	
+};
+
+type OwnPropsType = {
+	pageTitle: string;
+};
+
+type PropsType = MapDispatchPropsType & MapStatePropsType & OwnPropsType;
+
+class UsersContainer extends Component<PropsType> {
 	componentDidMount() {
-		let {currentPage, pageSize} = this.props
+		let { currentPage, pageSize } = this.props;
 		this.props.getUsers(currentPage, pageSize);
 	}
 
-	onPageChanged = (pageNumber) => {
-		let {pageSize} = this.props
+	onPageChanged = (pageNumber: number) => {
+		let { pageSize } = this.props;
 		this.props.getUsers(pageNumber, pageSize);
 	};
 
 	render() {
 		return (
 			<>
+				<h2>{this.props.pageTitle}</h2>
 				{this.props.isFetching ? <Preloader /> : null}
 				<Users
 					totalUsersCount={this.props.totalCount}
@@ -50,9 +74,9 @@ class UsersContainer extends Component {
 	}
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: AppStateType): MapStatePropsType => {
 	return {
-        users: getUsersSuperSelector(state),
+		users: getUsersSuperSelector(state),
 		pageSize: getPageSize(state),
 		totalCount: getTotalUsersCount(state),
 		currentPage: getCurrentPage(state),
@@ -63,11 +87,12 @@ let mapStateToProps = (state) => {
 
 export default compose(
 	withAuthRedirect,
-	connect(mapStateToProps, {
-		follow,
-		unfollow,
-		setPage,
-		toggleFollowingInProgress,
-		getUsers,
-	})
+	connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
+		mapStateToProps,
+		{
+			follow,
+			unfollow,
+			getUsers,
+		}
+	)
 )(UsersContainer);
